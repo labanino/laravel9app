@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Laravel website | @yield('title')</title>
-    <meta name="description" content="@yield('meta-description', 'Home meta description')" />
+    <title>My Laravel website | {{ $title ?? '' }}</title>
+    <meta name="description" content="{{ $metaDescription ?? '' }}" />
 </head>
-<body>
-    @include('partials.navigation')
 
-    @yield('content')
+<body>
+    <x-layouts.navigation />
+    {{ $slot }}
 </body>
 </html>
