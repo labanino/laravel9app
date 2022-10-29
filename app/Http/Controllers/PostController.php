@@ -25,8 +25,20 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return 'Process form';
+        $request->validate([
+            'title' => ['required'],
+            'body' => ['required']
+        ]);
+
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        session()->flash('status', 'Post has been created successfully!');
+
+        return to_route('posts.index');
     }
 }

@@ -8,14 +8,22 @@
     @csrf 
     <label>
         Title <br>
-        <input name="title" type="text">
+        <input name="title" type="text" value="{{old('title')}}">
+        @error('title')
+            <br>
+            <small style="color:red;">{{ $message }}</small>
+        @enderror
     </label>
 
     <br>
 
     <label>
         Body <br>
-        <textarea name="body" id="" cols="30" rows="10"></textarea>
+        <textarea name="body" id="" cols="30" rows="10">{{old('body')}}</textarea>
+        @error('body')
+            <br>
+            <small style="color:red;">{{ $message }}</small>
+        @enderror
     </label>
     
     <br>
