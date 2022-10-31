@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function index() 
+    public function index()
     {
         $posts = Post::get();
 
@@ -33,7 +33,7 @@ class PostController extends Controller
         return to_route('posts.index')->with('status', 'Post has been created successfully!');
     }
 
-    public function edit(Post $post) 
+    public function edit(Post $post)
     {
         return view('posts.edit', ['post' => $post]);
     }
