@@ -13,7 +13,7 @@ class PostController extends Controller
     {
         $posts = Post::get();
 
-        return view('posts.index', ['posts' => $posts]);
+        return view( 'posts.index', ['posts' => $posts]);
     }
 
     public function show(Post $post)
@@ -48,7 +48,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        
+
         return to_route('posts.index')->with('status', 'Post has been deleted successfully!');
     }
 }

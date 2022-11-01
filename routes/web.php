@@ -30,7 +30,7 @@ Route::view('/contact', 'contact')->name('contact');
 // Route::delete('/blog/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
 
 Route::resource('blog', PostController::class, [
-    'names' => ['post'],
+    'names' => 'posts',
     'parameters' => ['blog' => 'post']
 ]);
 
