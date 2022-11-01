@@ -1,5 +1,5 @@
 <x-layouts.app
-    title="Home" 
+    title="Home"
     meta-description="Home meta description">
 
     <h1>Welcome</h1>
