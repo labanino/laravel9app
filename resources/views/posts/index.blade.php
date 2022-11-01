@@ -1,13 +1,13 @@
 <x-layouts.app
-    title="Blog" 
+    title="Blog"
     meta-description="Blog meta description">
-    
+
     <h1>Blog</h1>
 
     <a href="{{ route('posts.create') }}">Create new post</a>
 
     @foreach ($posts as $post)
-    <div style="display: flex; align-items: baseline;"> 
+    <div style="display: flex; align-items: baseline;">
         <p>
             <a href="{{ route('posts.show', $post) }}">
                 {{ $post->title }}
@@ -21,5 +21,5 @@
         </form>
     </div>
     @endforeach
-    
+
 </x-layouts.app>
